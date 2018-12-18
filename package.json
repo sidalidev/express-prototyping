@@ -11,7 +11,8 @@
   "author": "Sid Bentifraouine <sidbentifraouine@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
