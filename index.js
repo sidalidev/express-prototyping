@@ -18,7 +18,7 @@ fs.readFile('users.json', { encoding: 'utf8' }, (err, data) => {
 app.engine('hbs', engines.handlebars)
 
 app.set('vews', './views')
-app.set('view engine', 'hbs')
+app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
   // I can also say Index.jade in order to force rendering the jade one
