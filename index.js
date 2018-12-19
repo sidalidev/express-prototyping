@@ -1,6 +1,6 @@
-const epxress = require('express')
+const express = require('express')
 const engines = require('consolidate')
-const app = epxress()
+const app = express()
 
 const fs = require('fs')
 const _ = require('lodash')
@@ -18,7 +18,9 @@ fs.readFile('users.json', { encoding: 'utf8' }, (err, data) => {
 app.engine('hbs', engines.handlebars)
 
 app.set('vews', './views')
-app.set('view engine', 'pug')
+app.set('view engine', 'hbs')
+
+app.use(express.static('images'))
 
 app.get('/', (req, res) => {
   // I can also say Index.jade in order to force rendering the jade one

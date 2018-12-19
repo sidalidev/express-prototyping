@@ -13,6 +13,7 @@
   <ul>
     {{#each users as |user|}}
     <li>
+      <img src="{{user.username}}_sm.jpg" alt="" srcset="">
       <a href="/{{user.username}}">{{user.name.full}}</a>
     </li>
     {{/each}}
