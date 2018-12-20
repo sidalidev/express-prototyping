@@ -20,7 +20,7 @@ app.engine('hbs', engines.handlebars)
 app.set('vews', './views')
 app.set('view engine', 'hbs')
 
-app.use(express.static('images'))
+app.use('/users-images', express.static('images'))
 
 app.get('/', (req, res) => {
   // I can also say Index.jade in order to force rendering the jade one
@@ -42,11 +42,7 @@ app.get(/.*dog.*/, (req, res, next) => {
 // Route with param
 app.get('/:username', (req, res) => {
   const username = req.params.username
-  res.send(username)
-})
-
-app.get('/bonsoir', (req, res) => {
-  res.send('Bonsoir!')
+  res.render('user', { username })
 })
 
 const server = app.listen(3000, () => {

@@ -5,20 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>User Index</title>
+  <title>Liste des utilisateurs</title>
 </head>
 
 <body>
-  <h1>Handlebars</h1>
-  <ul>
-    {{#each users as |user|}}
-    <li>
-      <img src="{{user.username}}_sm.jpg" alt="" srcset="">
-      <a href="/{{user.username}}">{{user.name.full}}</a>
-    </li>
-    {{/each}}
-  </ul>
-
+  <div>
+    <h1>Liste des utilisateurs</h1>
+    <ul>
+      {{#each users as |user|}}
+      <li>
+        <img src="users-images/{{user.username}}_sm.jpg">
+        <a href="/{{user.username}}">{{user.name.full}}</a>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
 </body>
 
 </html>
