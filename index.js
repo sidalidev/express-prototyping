@@ -42,7 +42,8 @@ app.get(/.*dog.*/, (req, res, next) => {
 // Route with param
 app.get('/:username', (req, res) => {
   const username = req.params.username
-  res.render('user', { username })
+  const user = getUser(username)
+  res.render('user', { username, address: user.location })
 })
 
 const server = app.listen(3000, () => {
